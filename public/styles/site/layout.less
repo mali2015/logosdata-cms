@@ -1,16 +1,211 @@
-#header {
-	margin-top: 30px;
+.header {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    padding: 15px 0px;
+    z-index: 1;
+    .inner {
+        padding: 0 10px;
+        max-width: 1440px;
+        margin: auto;
+    }
+    .navlinks {
+        float: right;
+        .menuitem {
+            float: left;
+            padding: 0 25px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 40px;
+            margin: 8px 0;
+            position: relative;
+        }
+        .menuitem:hover {
+            border-bottom: 2px solid #fff;
+            .submenu {
+                display: block;
+            }
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    .submenu {
+        display: none;
+        position: absolute;
+        background-color: #222;
+        top: 42px;
+        left: 0;
+        width: 100%;
+        a {
+            color: #ccc;
+        }
+        li {
+            padding: 10px 0;
+        }
+        li:hover {
+            background-color: #3a3f45;
+        }
+    }
+    .menubutton {
+        display: none;
+        float: right;
+        margin-top: 8px;
+    }
+    .show {
+        display: block;
+        left: 0!important;
+    }
+    .navlinks-mob {
+        display: none;
+        position: fixed;
+        width: 100%;
+        background-color: #222;
+        top: 0px;
+        left: -100%;
+        height: 100%;
+        .bottomline {
+            border-bottom: 1px solid #333;
+        }
+        li {
+            padding: 20px 30px;
+            a {
+                font-size: 18px;
+                color: #ccc;
+                text-decoration: none;
+            }
+        }
+        li.active {
+            background-color: #3385ff;
+        }
+        .submenu-mob {
+            background-color: #2c2f32;
+            margin: 0px -30px;
+            padding: 0 30px;
+            display: none;
+        }
+    }
 }
 
-#footer {
-	margin-top: 30px;
-	border-top: 1px solid #eeeeee;
-	padding-top: 30px;
-	color: #777777;
+.mainpage, .section, video {
+    width: 100%;
 }
 
-.gallery-image img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+.aboutbg {
+    background-image: url('../images/aboutbg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 508px;
+}
+
+.footer {
+    background-color: #212121;
+}
+
+.footer-main {
+    padding: 40px 36px 30px 36px;
+    max-width: 1020px;
+    margin: auto;
+}
+
+.copyright {
+    border-top: 1px solid #383838;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.btminfo {
+    float: left;
+    .btmpro {
+        float: left;
+        margin-right: 40px;
+    }
+    &:first-child {
+        margin-right: 140px;
+    }
+    .paddress {
+        max-width: 185px;
+    }
+    dt {
+        font-size: 16px;
+        color: #ccc;
+        margin-bottom: 22px;
+    }
+    dd {
+        margin-bottom: 8px;
+        a {
+            font-size: 14px;
+            color: #999;
+        }
+    }
+    .contactinfo {
+        margin-top: 22px;
+    }
+    li {
+        font-size: 14px;
+        color: #888;
+        margin-bottom: 8px;
+        img {
+            vertical-align: top;
+            margin-top: 3px;
+        }
+        p {
+            display: inline-block;
+            margin-left: 9px;
+        }
+    }
+}
+
+.wechatinfo {
+    margin-top: 20px;
+    .wechaticon {
+        .qrcodeimg {
+            position: absolute;
+            display: none;
+            top: -150px;
+            left: -40px;
+        }
+        position: relative;
+        float: left;
+        margin-left: 20px;
+        &:hover {
+            .qrcodeimg {
+                display: block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1034px) {
+    .pcmenuitem {
+        display: none;
+    }
+    .menubutton {
+        display: inline-block!important;
+    }
+    .inner {
+        padding: 0 30px!important;
+    }
+}
+
+@media screen and (max-width: 1034px) {
+    .mnone {
+        display: none;
+    }
+    .contactinfo {
+        margin-top: 0px!important;
+    }
+    .btminfo:first-child {
+        margin-right: 0px;
+    }
+    .footer-main {
+        padding: 20px 16px 20px 16px;
+    }
+    .paddress {
+        max-width: inherit!important;
+    }
 }

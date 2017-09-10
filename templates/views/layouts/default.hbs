@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>logosdata-cms</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    	<meta name="renderer" content="webkit" />
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="format-detection" content="telephone=no">
+		<title>{{title}}</title>
+		<meta name="keywords" content="{{keywords}}">
+		<meta name="description" content="{{description}}"></meta>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link href="/styles/site.min.css" rel="stylesheet">
 
-		{{!-- This file provides the default styling for the KeystoneJS Content Editor
-			- only renders when user is logged in and admin--}}
-		{{{isAdminEditorCSS user}}}
-
-		{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-		//- Safely remove this block if you are not targeting IE8 --}}
 		<!--[if lt IE 9]>
 			<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
 			<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
@@ -21,85 +20,110 @@
 
 	</head>
 	<body>
-		<div id="header">
-			<div class="container">
-				<div role="navigation" class="navbar navbar-default">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-							</button>
-							<a href="/" class="navbar-brand">logosdata-cms</a>
-						</div>
-						<div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav navbar-left">
-									{{# each navLinks}}
-									<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-										<a href="{{ href }}">{{ label }}</a>
-									</li>
-								{{/each}}
-							</ul>
-							<ul class="nav navbar-nav navbar-right">
-								{{#if user}}
-								<li><a href="/keystone/signout">Sign Out</a></li>
-								{{else}}
-								<li><a href="/keystone/signin">Sign In</a></li>
-								{{/if}}
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="body">
-			<!--
-				Flash messages allow you to display once-off status messages to users, e.g. form
-				validation errors, success messages, etc
-			-->
-			{{#if messages}}
-			<div id="flash-messages" class="container">
-				{{#if messages.info}}
-				<div class="alert alert-info">
-						{{{flashMessages messages.info}}}
-				</div>
-				{{/if}}
-				{{#if messages.success}}
-				<div class="alert alert-success">
-						{{{flashMessages messages.success}}}
-				</div>
-				{{/if}}
-				{{#if messages.warning}}
-				<div class="alert alert-warning">
-						{{{flashMessages messages.warning}}}
-				</div>
-				{{/if}}
-				{{#if messages.error}}
-				<div class="alert alert-danger">
-						{{{flashMessages messages.error}}}
-				</div>
-				{{/if}}
-			</div>
-			{{/if}}
-			<!-- The content block should contain the body of your template's content-->
-			{{{body}}}
-		</div>
-		<div class="container">
-			<div id="footer">
-				<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
-			</div>
-		</div>
-		{{!--
-			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
-			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
-			//- you can upgrade to 2.1.4 (also bundled) for better performance.
-		--}}
+    	<div class="container header">
+    		<div class="inner">
+    			<a class="logo" href="/"><img src="images/logo.png"></a>
+    			<div class="menubutton">
+	    			<img src="images/menu-btn.png" alt="">
+	    		</div>
+	            <ul class="navlinks clearfix">
+	                {{# each navLinks}}
+	                <li class="menuitem pcmenuitem" {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
+						<a href="{{href}}">{{label}}</a>
+						{{#if submenu}}
+						<ul class="submenu">
+							{{#each submenu}}
+							<li><a href="{{href}}">{{label}}</a></li>
+							{{/each}}
+						</ul>
+						{{/if}}
+					</li>
+					{{/each}}
+					<li class="menuitem"><a href="#">EN</a></li>
+	            </ul>
+    		</div>
+    		<ul class="navlinks-mob">
+                <li class="bottomline">
+                    <a class="logo" href="/"><img src="images/logo.png"></a>
+                </li>
+                {{# each navLinks}}
+                <li>
+					<a href="{{href}}">{{label}}</a>
+					{{#if submenu}}
+					<ul class="submenu-mob">
+						{{#each submenu}}
+						<li><a href="{{href}}">{{label}}</a></li>
+						{{/each}}
+					</ul>
+					{{/if}}
+				</li>
+				{{/each}}
+            </ul>
+        </div>
+        {{{body}}}
+		<div class="footer">
+            <div class="footer-main clearfix">
+                <div class="btminfo">
+                	<a class="logo mnone" href="/"><img src="images/logo-footer.png"></a>
+                	<ul class="contactinfo">
+                		<li><img src="images/phone_icon.png" alt=""><p>010-62416380</p></li>
+                		<li><img src="images/email_icon.png" alt=""><p>contact@logosdata.com</p></li>
+                		<li><img src="images/address_icon.png" alt=""><p class="paddress">北京市海淀区北四环西路67号中关村国际创新大厦301室</p></li>
+                	</ul>
+                	<div class="wechatinfo clearfix mnone">
+                		<div class="wechaticon">
+                			<img src="images/wechat-icon.png" alt="">
+                			<img class="qrcodeimg" src="images/public-img.png" alt="">
+                		</div>
+                		<div class="wechaticon">
+                			<img src="images/public-icon.png" alt="">
+                			<img class="qrcodeimg" src="images/qrcode-img.png" alt="">
+                		</div>
+                	</div>
+                </div>
+                <div class="btminfo clearfix mnone">
+                	<dl class="btmpro">
+	                    <dt>产品服务</dt>
+	                    <dd><a href="details.html#product1">发票流向专题分析</a></dd>
+	                    <dd><a href="details.html#product2">股权转让专题分析</a></dd>
+	                    <dd><a href="details.html#product3">税收流失风险测算</a></dd>
+	                    <dd><a href="details.html#product4">纳税人全息画像</a></dd>
+	                    <dd><a href="details.html#product4">银税互动</a></dd>
+	                    <dd><a href="details.html#product4">涉税信息采集系统</a></dd>
+	                </dl>
+	                <dl class="btmpro">
+	                    <dt>罗格宏观观察</dt>
+	                    <dd><a href="details.html#product1">罗格宏观观察</a></dd>
+	                </dl>
+	                <dl class="btmpro">
+	                    <dt>媒体报道</dt>
+	                    <dd><a href="details.html#product1">媒体报道</a></dd>
+	                </dl>
+	                <dl class="btmpro">
+	                    <dt>招贤纳士</dt>
+	                    <dd><a href="details.html#product1">团队介绍</a></dd>
+	                    <dd><a href="details.html#product2">招聘岗位</a></dd>
+	                </dl>
+	                <dl class="btmpro">
+	                    <dt>关于我们</dt>
+	                    <dd><a href="details.html#product1">罗格简介</a></dd>
+	                    <dd><a href="details.html#product2">发展历程</a></dd>
+	                </dl>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>京ICP备16044865号-1 | ©2017 北京罗格数据科技有限公司</p>
+                <div style="width:300px;margin:0 auto; padding:5px 0 0 0;">
+                    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802023830" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/images/record_icon.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#666;">京公网安备 11010802023830号</p></a>
+                </div>
+            </div>
+        </div>
 		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
-		{{!--
-			//- Customise which Bootstrap javascript files are served by including
-			//- them specifically here, instead of bootstrap-3.3.5.min.js
-		--}}
 		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
-		{{{isAdminEditorJS user}}}
+		<script type="text/javascript">
+			$('.menubutton').click(function(){
+				$('.navlinks-mob').addClass('show');
+			});
+		</script>
 	</body>
 </html>

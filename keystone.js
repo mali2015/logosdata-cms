@@ -38,11 +38,15 @@ keystone.set('locals', {
 });
 keystone.set('routes', require('./routes'));
 
+//设置管理页面上显示的导航项
 keystone.set('nav', {
 	posts: ['posts', 'post-categories'],
 	galleries: 'galleries',
 	enquiries: 'enquiries',
 	users: 'users',
+	news: 'news',
+	observations: 'observations',
+	recruitments: 'recruitments'
 });
 
 

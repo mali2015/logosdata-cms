@@ -6,10 +6,13 @@ var _ = require('lodash');
 */
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
-		{ label: 'Home', key: 'home', href: '/' },
 		{ label: 'Blog', key: 'blog', href: '/blog' },
 		{ label: 'Gallery', key: 'gallery', href: '/gallery' },
 		{ label: 'Contact', key: 'contact', href: '/contact' },
+		{ label: '媒体报道', key: 'news', href: '/news' },
+		{ label: '罗格宏观观察', key: 'observations', href: '/observations' },
+		{ label: '招贤纳士', key: 'recruitments', href: '/recruitments' },
+		{ label: '关于我们', key: '', href: '/about', submenu: [{ label: '公司简介', href: '/about#introduce' }, { label: '团队介绍', href: '/about#team' }] }
 	];
 	res.locals.user = req.user;
 	next();

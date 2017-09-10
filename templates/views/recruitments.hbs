@@ -1,0 +1,25 @@
+<div class="container">
+	<h1>Recruitments</h1>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 col-md-9">
+			<h4 class="text-weight-normal">Showing {{ data.recruitments.length}} recruitments.</h4>
+			<div class="blog">
+				{{# each data.recruitments}}
+				<div class="post">
+					<h3>{{title}}</h3>
+					<label>工作地点：</label><span>{{workplace}}</span>
+					<label>隶属部门：</label><span>{{department}}</span>
+					<br />
+					<label>岗位职责：</label>
+					<p>{{positionDes}}</p>
+					<label>任职资格：</label>
+					<p>{{qualifications}}</p>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	{{>pagination}}
+</div>
