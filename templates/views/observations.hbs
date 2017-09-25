@@ -1,18 +1,18 @@
-<div class="container">
-	<h1>Observations</h1>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-8 col-md-9">
-			<h4 class="text-weight-normal">Showing {{ data.observations.length}} observations.</h4>
-			<div class="blog">
-				{{# each data.observations}}
-				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
-					<h2><a target="_blank" href="{{url}}">{{{title}}}</a></h2>
-				</div>
-				{{/each}}
-			</div>
-		</div>
-	</div>
-	{{>pagination}}
+<div class="mainpage">
+    <div class="pagewrap observationbg">
+    	<h1>罗格宏观观察</h1>
+    </div>
+    <ul class="linkspanel moblipadding">
+		{{# each data.observations}}
+		<li>
+	        <div>
+	        	<p>{{date}}</p>
+                <a href="{{url}}" target="_blank">
+                    {{{title}}}
+                </a>
+	        </div>
+        </li>
+        {{/each}}
+        <li class="moreitem"><img src="/images/more.png" alt="">更多</li>
+    </ul>
 </div>

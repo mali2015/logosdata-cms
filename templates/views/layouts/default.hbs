@@ -10,7 +10,6 @@
 		<title>{{title}}</title>
 		<meta name="keywords" content="{{keywords}}">
 		<meta name="description" content="{{description}}"></meta>
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link href="/styles/site.min.css" rel="stylesheet">
 
 		<!--[if lt IE 9]>
@@ -28,7 +27,7 @@
 	    		</div>
 	            <ul class="navlinks clearfix">
 	                {{# each navLinks}}
-	                <li class="menuitem pcmenuitem" {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
+	                <li class="menuitem pcmenuitem {{#ifeq ../section key}}active{{else}}{{/ifeq}}">
 						<a href="{{href}}">{{label}}</a>
 						{{#if submenu}}
 						<ul class="submenu">
@@ -118,12 +117,9 @@
                 </div>
             </div>
         </div>
+        <div class="returntop"></div>
 		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
 		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
-		<script type="text/javascript">
-			$('.menubutton').click(function(){
-				$('.navlinks-mob').addClass('show');
-			});
-		</script>
+		<script src="/js/main.js"></script>
 	</body>
 </html>

@@ -1,25 +1,51 @@
-<div class="container">
-	<h1>Recruitments</h1>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-8 col-md-9">
-			<h4 class="text-weight-normal">Showing {{ data.recruitments.length}} recruitments.</h4>
-			<div class="blog">
-				{{# each data.recruitments}}
-				<div class="post">
-					<h3>{{title}}</h3>
-					<label>工作地点：</label><span>{{workplace}}</span>
-					<label>隶属部门：</label><span>{{department}}</span>
-					<br />
-					<label>岗位职责：</label>
-					<p>{{positionDes}}</p>
-					<label>任职资格：</label>
-					<p>{{qualifications}}</p>
+<div class="mainpage">
+    <div class="pagewrap recruitmentsbg">
+    	<h1>招贤纳士</h1>
+    </div>
+    <div class="aboutpart">
+		<h2>团队介绍</h2>
+		<div class="memberlist">
+			<div class="member clearfix">
+				<div class="fl mobileavator"><img src="/images/luyufeng.png" alt=""></div>
+				<div class="fl detailpanel">
+					<p class="mem-name mobilecenter">鲁钰锋</p>
+					<p class="mem-job mobilecenter">创始人&amp;CEO</p>
+					<p class="mem-introduce">1974年出生，1996年毕业于浙江大学信息与电子工程学系，获得学士学位；2003年清华大学经济管理学院，获得MBA学位；2009年中国人民大学财政金融学院，获得经济学博士学位；2015年清华大学国情研究院和公共管理学院，博士后研究员。<br />历任湖南省长沙市国税稽查局稽查员；湖南省国家税务局信息中心科长；国家税务总局信息中心税务信息化规划负责人；国家税务总局征管和科技发展司副处长；国家税务总局信息与网络安全领导小组办公室架构管控组组长。系金税三期工程总体规划设计和架构管控、决策支持系统的主要负责人。多年从事电子政务信息系统规划、数据仓库和大数据挖掘、区域经济分析和税收经济分析等工作，对政府管理、税收政策、税务业务、IT运营和互联网产品规划有比较深入的专业理解和实战经验。</p>
 				</div>
-				{{/each}}
+			</div>
+			<div class="member clearfix">
+				<div class="fl mobileavator"><img src="/images/luyufeng.png" alt=""></div>
+				<div class="fl detailpanel">
+					<p class="mem-name mobilecenter">鲁钰锋</p>
+					<p class="mem-job mobilecenter">创始人&amp;CEO</p>
+					<p class="mem-introduce">1974年出生，1996年毕业于浙江大学信息与电子工程学系，获得学士学位；2003年清华大学经济管理学院，获得MBA学位；2009年中国人民大学财政金融学院，获得经济学博士学位；2015年清华大学国情研究院和公共管理学院，博士后研究员。<br />历任湖南省长沙市国税稽查局稽查员；湖南省国家税务局信息中心科长；国家税务总局信息中心税务信息化规划负责人；国家税务总局征管和科技发展司副处长；国家税务总局信息与网络安全领导小组办公室架构管控组组长。系金税三期工程总体规划设计和架构管控、决策支持系统的主要负责人。多年从事电子政务信息系统规划、数据仓库和大数据挖掘、区域经济分析和税收经济分析等工作，对政府管理、税收政策、税务业务、IT运营和互联网产品规划有比较深入的专业理解和实战经验。</p>
+				</div>
 			</div>
 		</div>
 	</div>
-	{{>pagination}}
+	<div class="aboutpart">
+		<h2>招聘岗位</h2>
+		<ul id="job" class="classify moblipadding clearfix">
+			<li class="active"><span>全部</span></li>
+			<li><span>产品类</span></li>
+			<li><span>技术类</span></li>
+			<li><span>市场类</span></li>
+			<li><span>其他</span></li>
+		</ul>
+		<div class="recruitlist moblipadding">
+			{{# each data.recruitments}}
+			<div class="recruititem">
+				<p class="job-title">{{title}}</p>
+				<label class="job-sub">工作地点：</label><span>{{workplace}}</span>
+				<label class="job-sub">隶属部门：</label><span>{{department}}</span>
+				<br />
+				<label class="job-main">岗位职责：</label>
+				<p>{{positionDes}}</p>
+				<label class="job-main">任职资格：</label>
+				<p>{{qualifications}}</p>
+				<a class="apply-btn" href="mailto:contact@logosdata.com">申请职位</a>
+			</div>
+			{{/each}}
+		</div>
+	</div>
 </div>
