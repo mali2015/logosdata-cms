@@ -6,13 +6,15 @@
 		{{# each data.observations}}
 		<li>
 	        <div>
-	        	<p>{{date}}</p>
+	        	<p>{{date createdAt}}</p>
                 <a href="{{url}}" target="_blank">
                     {{{title}}}
                 </a>
 	        </div>
         </li>
         {{/each}}
+        {{#isShowMore data.observations.length}}
         <li class="moreitem"><img src="/images/more.png" alt="">更多</li>
+        {{/isShowMore}}
     </ul>
 </div>

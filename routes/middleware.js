@@ -12,8 +12,8 @@ exports.initLocals = function (req, res, next) {
 		{ label: '产品与服务', key: 'product', href: '/product' },
 		{ label: '媒体报道', key: 'news', href: '/news' },
 		{ label: '罗格宏观观察', key: 'observations', href: '/observations' },
-		{ label: '招贤纳士', key: 'recruitments', href: '/recruitments' },
-		{ label: '关于我们', key: 'about', href: '/about', submenu: [{ label: '公司简介', href: '/about#introduce' }, { label: '团队介绍', href: '/about#team' }] }
+		{ label: '招贤纳士', key: 'recruitments', href: '/recruitments', submenu: [{ label: '团队介绍', href: 'recruitments#teamintro' }, { label: '招聘岗位', href: 'recruitments#positions' }] },
+		{ label: '关于我们', key: 'about', href: '/about', submenu: [{ label: '罗格简介', href: 'about' }, { label: '发展历程', href: 'about#history' }] }
 	];
 	res.locals.user = req.user;
 	next();

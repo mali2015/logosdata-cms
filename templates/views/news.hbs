@@ -3,16 +3,18 @@
     	<h1>媒体报道</h1>
     </div>
     <ul class="linkspanel moblipadding">
-		{{# each data.news}}
+		{{#each data.news}}
 		<li>
 	        <div>
-	        	<p>{{date}}</p>
+	        	<p>{{date createdAt}}</p>
                 <a href="{{url}}" target="_blank">
                     {{{title}}}
                 </a>
 	        </div>
         </li>
         {{/each}}
+        {{#isShowMore data.news.length}}
         <li class="moreitem"><img src="/images/more.png" alt="">更多</li>
+        {{/isShowMore}}
     </ul>
 </div>

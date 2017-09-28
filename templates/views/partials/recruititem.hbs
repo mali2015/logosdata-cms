@@ -1,0 +1,13 @@
+{{# each data}}
+<div class="recruititem">
+	<p class="job-title">{{title}}</p>
+	<label class="job-sub">工作地点：</label><span>{{workplace}}</span>
+	<label class="job-sub">隶属部门：</label><span>{{department}}</span>
+	<br />
+	<label class="job-main">岗位职责：</label>
+	<p>{{positionDes}}</p>
+	<label class="job-main">任职资格：</label>
+	<p>{{qualifications}}</p>
+	<a class="apply-btn" href="mailto:contact@logosdata.com">申请职位</a>
+</div>
+{{/each}}

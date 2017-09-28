@@ -38,13 +38,16 @@
 						{{/if}}
 					</li>
 					{{/each}}
-					<li class="menuitem"><a href="#">EN</a></li>
+					<!-- <li class="menuitem"><a href="#">EN</a></li> -->
 	            </ul>
     		</div>
     		<ul class="navlinks-mob">
                 <li class="bottomline">
                     <a class="logo" href="/"><img src="images/logo.png"></a>
                 </li>
+                <div class="close-btn">
+                	<img src="/images/close-btn.png" alt="">
+                </div>
                 {{# each navLinks}}
                 <li>
 					<a href="{{href}}">{{label}}</a>
@@ -65,8 +68,8 @@
                 <div class="btminfo">
                 	<a class="logo mnone" href="/"><img src="images/logo-footer.png"></a>
                 	<ul class="contactinfo">
-                		<li><img src="images/phone_icon.png" alt=""><p>010-62416380</p></li>
-                		<li><img src="images/email_icon.png" alt=""><p>contact@logosdata.com</p></li>
+                		<li><img src="images/phone_icon.png" alt=""><a href="tel:010-62416380"><p>010-62416380</p></a></li>
+                		<li><img src="images/email_icon.png" alt=""><a href="mailto:contact@logosdata.com"><p>contact@logosdata.com</p></a></li>
                 		<li><img src="images/address_icon.png" alt=""><p class="paddress">北京市海淀区北四环西路67号中关村国际创新大厦301室</p></li>
                 	</ul>
                 	<div class="wechatinfo clearfix mnone">
@@ -83,30 +86,30 @@
                 <div class="btminfo clearfix mnone">
                 	<dl class="btmpro">
 	                    <dt>产品服务</dt>
-	                    <dd><a href="details.html#product1">发票流向专题分析</a></dd>
-	                    <dd><a href="details.html#product2">股权转让专题分析</a></dd>
-	                    <dd><a href="details.html#product3">税收流失风险测算</a></dd>
-	                    <dd><a href="details.html#product4">纳税人全息画像</a></dd>
-	                    <dd><a href="details.html#product4">银税互动</a></dd>
-	                    <dd><a href="details.html#product4">涉税信息采集系统</a></dd>
+	                    <dd><a href="product#productsys">产品体系</a></dd>
+	                    <dd><a href="product#platform">平台端</a></dd>
+	                    <dd><a href="product#tax">税务端</a></dd>
+	                    <dd><a href="product#enterprise">企业端</a></dd>
+	                    <dd><a href="product#finance">金融端</a></dd>
+	                    <dd><a href="product#consult">咨询端</a></dd>
 	                </dl>
 	                <dl class="btmpro">
 	                    <dt>罗格宏观观察</dt>
-	                    <dd><a href="details.html#product1">罗格宏观观察</a></dd>
+	                    <dd><a href="observations">罗格宏观观察</a></dd>
 	                </dl>
 	                <dl class="btmpro">
 	                    <dt>媒体报道</dt>
-	                    <dd><a href="details.html#product1">媒体报道</a></dd>
+	                    <dd><a href="news">媒体报道</a></dd>
 	                </dl>
 	                <dl class="btmpro">
 	                    <dt>招贤纳士</dt>
-	                    <dd><a href="details.html#product1">团队介绍</a></dd>
-	                    <dd><a href="details.html#product2">招聘岗位</a></dd>
+	                    <dd><a href="recruitments#teamintro">团队介绍</a></dd>
+	                    <dd><a href="recruitments#positions">招聘岗位</a></dd>
 	                </dl>
 	                <dl class="btmpro">
 	                    <dt>关于我们</dt>
-	                    <dd><a href="details.html#product1">罗格简介</a></dd>
-	                    <dd><a href="details.html#product2">发展历程</a></dd>
+	                    <dd><a href="about">罗格简介</a></dd>
+	                    <dd><a href="about#history">发展历程</a></dd>
 	                </dl>
                 </div>
             </div>
@@ -120,6 +123,7 @@
         <div class="returntop"></div>
 		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
 		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
+		<script type="text/javascript" src="/js/jquery/jquery.waypoints.min.js"></script>
 		<script src="/js/main.js"></script>
 	</body>
 </html>

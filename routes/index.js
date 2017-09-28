@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var middleware = require('./middleware');
+var getrecruits = require('./api/getrecruits');
 var importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
@@ -24,4 +25,5 @@ exports = module.exports = function (app) {
 	app.get('/recruitments', routes.views.recruitments);
 	app.get('/about', routes.views.about);
 	app.get('/product', routes.views.product);
+	app.get('/getrecruits', getrecruits);
 };
