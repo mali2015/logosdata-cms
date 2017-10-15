@@ -282,7 +282,7 @@ module.exports = function() {
         return obj._[underscoreMethod].format();
     };
     _helpers.isShowMore = function(len, options) {
-        if (len > 9) {
+        if (len > 10) {
             return options.fn(this);
         } else {
             return options.inverse(this);

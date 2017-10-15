@@ -1,3 +1,6 @@
+if (!!window.ActiveXObject || "ActiveXObject" in window || navigator.userAgent.indexOf("Edge") > -1) {
+    document.getElementsByTagName('body')[0].innerHTML = '为保证显示效果，请使用非IE内核浏览器访问本站。';
+}
 (function(win) {
     var doc = win.document,
         html = doc.documentElement;
