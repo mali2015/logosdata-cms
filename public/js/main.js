@@ -1,6 +1,3 @@
-if (!!window.ActiveXObject || "ActiveXObject" in window || navigator.userAgent.indexOf("Edge") > -1) {
-    document.getElementsByTagName('body')[0].innerHTML = '为保证显示效果，请使用非IE内核浏览器访问本站。';
-}
 (function(win) {
     var doc = win.document,
         html = doc.documentElement;
@@ -14,12 +11,8 @@ if (!!window.ActiveXObject || "ActiveXObject" in window || navigator.userAgent.i
             }
         };
     if (!doc.addEventListener) return;
-    win.addEventListener(resizeEvt, recalc, false);
     doc.addEventListener('DOMContentLoaded', recalc, false);
 })(window);
-// $(window).resize(function() {
-//     location.reload();
-// });
 $('.menubutton').click(function() {
     $('.navlinks-mob').addClass('show');
 });
